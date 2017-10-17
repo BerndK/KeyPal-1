@@ -501,6 +501,7 @@ namespace KeyPal
 
             while (true)
             {
+                Console.Write("> ");
                 string fullline = Console.ReadLine().Trim();
                 splitargs = fullline.Split(' ');
 
@@ -518,7 +519,11 @@ namespace KeyPal
                     }
 
 
-                if (arg1.Equals("") || arg1.Equals("q"))
+                if (string.IsNullOrWhiteSpace(arg1))
+                    continue;
+
+
+                if (arg1.Equals("q"))
                     break;
 
 
